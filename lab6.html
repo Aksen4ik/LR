@@ -6,62 +6,46 @@
     <title>Document</title>
 </head>
 <body>
-    <script>function Person(firstName, lastName, birthYear) {
-      this.firstName = firstName;
-      this.lastName = lastName;
-      this.birthYear = birthYear;
-    
-      this.showInfo = function() {
-        console.log("Имя: " + this.firstName);
-        console.log("Фамилия: " + this.lastName);
-        console.log("Год рождения: " + this.birthYear);
-      };
-    }
-    
-    function Car(brand, year, engine) {
-      this.brand = brand;
-      this.year = year;
-      this.engine = engine;
-    
-      this.showInfo = function() {
-        console.log("Марка: " + this.brand);
-        console.log("Год выпуска: " + this.year);
-        console.log("Объем двигателя: " + this.engine);
-      };
-    }
-    
-    function Book(title, author, year) {
-      this.title = title;
-      this.author = author;
-      this.year = year;
-    
-      this.showInfo = function() {
-        console.log("Название: " + this.title);
-        console.log("Автор: " + this.author);
-        console.log("Год выпуска: " + this.year);
-      };
-    
-      this.read = function(person, car) {
-        console.log(
-          person.firstName +
-            " читает книгу " +
-            this.title +
-            " про машину " +
-            car.brand
-        );
-      };
-    }
-    
-    let person = new Person("Данилов", "Даниил", 1990);
-    let car = new Car("LADA", 2010, "1.6L");
-    let book = new Book("История автомобиля", "Альберт Хамоков", 2004);
-    
-    person.showInfo();
-    console.log(" ");
-    car.showInfo();
-    console.log(" ");
-    book.showInfo();
-    console.log(" ");
-    book.read(person, car);</script>
+    <script>
+        function Car(cName, cYear, cValue){
+  this.name = cName;
+  this.year = cYear;
+  this.value = cValue;
+  this.GetInfoCar = function(){
+    document.write(`${this.name} ${this.year} ${this.value}`)
+  }
+}
+
+function User(uName, uSurname, uYear){
+  this.name = uName;
+  this.year = uYear;
+  this.surname = uSurname;
+  this.GetInfoUser = function(){
+    document.write(`${this.name} ${this.year} ${this.surname}`)
+  }
+}
+
+function Book(bName, bYear, bAuthor){
+  this.name = bName;
+  this.year = bYear;
+  this.author = bAuthor;
+  this.GetInfoBook = function(){
+    document.write(`${this.name} ${this.year} ${this.author}`)
+  }
+}
+
+function GetInfo(){
+  this.display = function(Car, User, Book){
+    document.write(`${User.name} читает книгу ${Book.name} про машину ${Car.name}`)
+  }
+}
+
+var lada = new Car('Priora', 2011, "1.6");
+var tim = new User('Tim', 'Koooock', 1980);
+var book = new Book('Sekiro', 2019, 'FromSoftware');
+var disp = new GetInfo();
+disp.display(lada, tim, book);
+
+    </script>
 </body>
 </html>
