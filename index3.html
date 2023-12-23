@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" id="arr" placeholder="Массив чисел"/><br>
+      <input type="button" value="Отправить" onclick="pr()"/>
+    </form>
+    <script>
+      function pr() {
+        // const sequence = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        var arr = document.getElementById('arr').value.split(' ');
+        var ev = arr.filter((num) => num % 2 == 0);
+
+        if (ev.length === 0) {
+          document.write("Четных нет.");
+        } else {
+          document.write("Четные:", ev);
+        }
+      }
+    </script>
+  </body>
+</html>
